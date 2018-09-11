@@ -23,11 +23,6 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
-function randomTile(num1 = 0, num2 = 4) {
-    return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
-}
-
 // Temporary Hero class structure in progress.
 
 class Hero {
@@ -47,8 +42,13 @@ class Hero {
         this.sprite = 'images/char-boy.png';
     }
 
+    // Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
+    randomTile(num1 = 0, num2 = 2) {
+        return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+    }
+
     // Draw method for the image to be displayed.
-    render(){
+    render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
