@@ -22,9 +22,29 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
 
+// Temporary Hero class structure in progress.
+
+class Hero {
+    constructor() {
+
+        // Properties for Hero class
+
+        // Position along the x and y axis grid of canvas.
+        this.x = 300;
+        this.y = 300;
+
+        // Image of the character.
+        this.sprite = 'images/char-boy.png';
+    }
+
+    // Draw method for the image to be displayed.
+    render(){
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
+
+const player = new Hero();
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
