@@ -1,7 +1,5 @@
 // GLOBAL DATA
 
-let tileNumContainer;
-
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
