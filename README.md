@@ -1,13 +1,18 @@
 # Classic Aracde Game
 
+### Legend
+- (*) = In progress.
+- (**) = Complete.
+
 ## Description:
 
-A practice challenge for Javascript OOP.
+This is a game with 'frogger' like functionality of getting the player acrosss the a set amount of cordinates to the win condition avoiding posssible entities that would cause you to lose.
 
 ## Objective:
+- Create a Hero (*)
 - Containment perimeter (Player can not move off screen).
 - Vehicle system.
 - Vehicle-player collisions logics and effects.
 
 ## TODO's:
-- Clean out the comments in JS files.
+- ~~Clean out the comments in JS files.~~ Inspection of comments on elements and outside resource engines for insight. (**)
