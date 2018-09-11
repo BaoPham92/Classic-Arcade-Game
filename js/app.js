@@ -42,6 +42,17 @@ class Hero {
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
+
+    handleInput(input) {
+
+        // Temporary switch statements to help with mapping the rendered character amongst the x and y axis of canvas.
+        switch (input) {
+            case 'left': this.x -= 90; break;
+            case 'up': this.y -= 90; break;
+            case 'right': this.x += 90; break;
+            case 'down': this.y += 90; break;
+        }
+    }
 }
 
 const player = new Hero();
