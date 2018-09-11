@@ -1,3 +1,7 @@
+// GLOBAL DATA
+
+let tileNumContainer;
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
@@ -21,7 +25,11 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
+// Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
+function randomTile(num1 = 0, num2 = 4) {
+    return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+}
+
 // Temporary Hero class structure in progress.
 
 class Hero {
@@ -30,7 +38,7 @@ class Hero {
         // Properties for Hero class
 
         // Position along the x and y axis grid of canvas.
-        this.x = 101 * 0;
+        this.x = 101 * randomTile();
         this.y = (83 * 5) - 40;
 
         // Hero movement properties.
