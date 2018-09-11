@@ -34,6 +34,10 @@ class Hero {
         this.x = 300;
         this.y = 300;
 
+        // Hero movement properties.
+        this.verticalMovement = 83;
+        this.horizontalMovement = 101;
+
         // Image of the character.
         this.sprite = 'images/char-boy.png';
     }
@@ -47,10 +51,10 @@ class Hero {
 
         // Temporary switch statements to help with mapping the rendered character amongst the x and y axis of canvas.
         switch (input) {
-            case 'left': this.x -= 90; break;
-            case 'up': this.y -= 90; break;
-            case 'right': this.x += 90; break;
-            case 'down': this.y += 90; break;
+            case 'left': this.x -= this.horizontalMovement; break;
+            case 'up': this.y -= this.verticalMovement; break;
+            case 'right': this.x += this.horizontalMovement; break;
+            case 'down': this.y += this.verticalMovement; break;
         }
     }
 }
