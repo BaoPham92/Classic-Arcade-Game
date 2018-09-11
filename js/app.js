@@ -22,7 +22,6 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
-
 // Temporary Hero class structure in progress.
 
 class Hero {
@@ -31,12 +30,12 @@ class Hero {
         // Properties for Hero class
 
         // Position along the x and y axis grid of canvas.
-        this.x = 300;
-        this.y = 300;
+        this.x = 101 * 0;
+        this.y = (83 * 5) - 40;
 
         // Hero movement properties.
-        this.verticalMovement = 83;
         this.horizontalMovement = 101;
+        this.verticalMovement = 83;
 
         // Image of the character.
         this.sprite = 'images/char-boy.png';
