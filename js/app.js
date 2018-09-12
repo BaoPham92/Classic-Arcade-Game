@@ -43,14 +43,17 @@ class Character {
 
 // Enemy class representing vehicles and vehicle collisions.
 class Enemy extends Character {
-    constructor(){
+    constructor(y, velocity){
         super()
 
         // Properties for Enemy class.
 
+        // Input speed of class instances.
+        this.velocity = velocity;
+
         // Enemy placement on x,y axis.
         this.x = 0;
-        this.y = 48;
+        this.y = y + 48;
 
         // Sprite img for Enemy to render on canvas element.
         this.sprite = 'images/enemy-bug.png';
@@ -65,16 +68,9 @@ class Enemy extends Character {
     update(dt) {
 
         // Increase speed of Enemy if x is less than all 5 blocks. (101w /per block)
-        this.x < this.borderX ? this.x += 150 * dt : this.x = -101;
+        this.x < this.borderX ? this.x += dt * this.velocity : this.x = -101;
     }
 }
-
-// Instantiate.
-const vehicle = new Enemy();
-
-// Declare and push Enemy.
-const allEnemies = [];
-allEnemies.push(vehicle);
 
 // Hero class representing player and collisions.
 
@@ -112,8 +108,17 @@ class Hero extends Character {
     }
 }
 
-// Instantiate.
+// Instantiated objects of classes.
+
+// Player
 const player = new Hero();
+
+// Enemies
+const vehicle = new Enemy(83, 150), vehicle2 = new Enemy(166, 110), vehicle3 = new Enemy(0, 225);
+
+// Declare and push Enemy.
+const allEnemies = [];
+allEnemies.push(vehicle, vehicle2, vehicle3);
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
