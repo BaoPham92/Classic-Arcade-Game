@@ -23,11 +23,6 @@
 //     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 // };
 
-// Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
-const randomTile = function(num1 = 0, num2 = 4) {
-    return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
-}
-
 // Base character for Enemy and Hero to derive characteristics from.
 class Character {
     constructor() {
@@ -38,6 +33,10 @@ class Character {
 
         // Border limits
         this.borderX = 101 * 5;
+    }
+
+    randomTile(num1 = 0, num2 = 4) {
+        return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
     }
 }
 
@@ -77,10 +76,11 @@ class Enemy extends Character {
 class Hero extends Character {
     constructor() {
         super()
+
         // Properties for Hero class
 
         // Initial spawn position.
-        this.spawnX = this.horizontalMovement * randomTile();
+        this.spawnX = this.horizontalMovement * super.randomTile();
         this.spawnY = (this.verticalMovement * 5) - 40;
         
         // Character position along the x and y axis grid of canvas.
