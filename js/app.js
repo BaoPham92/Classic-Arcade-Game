@@ -50,7 +50,7 @@ class Enemy extends Character {
 
         // Enemy placement on x,y axis.
         this.x = 0;
-        this.y = 0;
+        this.y = 48;
 
         // Sprite img for Enemy to render on canvas element.
         this.sprite = 'images/enemy-bug.png';
