@@ -18,16 +18,17 @@
 //     // all computers.
 // };
 
-// // Draw the enemy on the screen, required method for game
-// Enemy.prototype.render = function() {
-//     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-// };
+// Draw the enemy on the screen, required method for game
+Enemy.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
 // Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
 const randomTile = function(num1 = 0, num2 = 4) {
     return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
 }
 
+// Enemy class representing vehicles and vehicle collisions.
 class Enemy {
     constructor(){
 
@@ -45,7 +46,16 @@ class Enemy {
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
+
+    // Update enemy entity across the x,y axis.
+    update() {
+
+    }
 }
+
+const vehicle = new Enemy();
+const allEnemies = [];
+allEnemies.push(vehicle);
 
 // Temporary Hero class structure in progress.
 
