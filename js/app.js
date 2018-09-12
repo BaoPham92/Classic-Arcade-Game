@@ -19,9 +19,9 @@
 // };
 
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+// Enemy.prototype.render = function() {
+//     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+// };
 
 // Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
 const randomTile = function(num1 = 0, num2 = 4) {
@@ -53,7 +53,10 @@ class Enemy {
     }
 }
 
+// Instantiate.
 const vehicle = new Enemy();
+
+// Declare and push Enemy.
 const allEnemies = [];
 allEnemies.push(vehicle);
 
@@ -97,6 +100,7 @@ class Hero {
     }
 }
 
+// Instantiate.
 const player = new Hero();
 
 // Now instantiate your objects.
