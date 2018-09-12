@@ -1,5 +1,8 @@
 # Classic Aracde Game
 
+#### Last update: 
+Updated objective progress.
+
 ### Legend
 - (*) = In progress.
 - (**) = Complete.
@@ -10,8 +13,8 @@ This is a game with 'frogger' like functionality of getting the player acrosss t
 
 ## Objective:
 - Create a Hero (*)
-- Containment perimeter (Player can not move off screen).
-- Vehicle system.
+- Containment perimeter (Player can not move off screen). (**)
+- Vehicle system.(*)
 - Vehicle-player collisions logics and effects.
 
 ## TODO's:
