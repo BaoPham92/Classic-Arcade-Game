@@ -61,7 +61,7 @@ class Hero {
         // Temporary switch statements to help with mapping the rendered character amongst the x and y axis of canvas.
         switch (input) {
             case 'left': if (this.x > 0) { this.x -= this.horizontalMovement; break; } else if (this.x <= 0) {break;}
-            case 'up': if (this.y > 0) {this.y -= this.verticalMovement; break;} else if (this.y <= 0) {break;}
+            case 'up': if (this.y > 83) {this.y -= this.verticalMovement; break;} else if (this.y <= 83) {break;}
             case 'right': if (this.x < 101 * 4) this.x += this.horizontalMovement; break;
             case 'down': if (this.y < 83 * 4) this.y += this.verticalMovement; break;
         }
