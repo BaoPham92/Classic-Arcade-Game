@@ -35,6 +35,9 @@ class Character {
         // Character movement properties.
         this.horizontalMovement = 101;
         this.verticalMovement = 83;
+
+        // Border limits
+        this.borderX = 101 * 5;
     }
 }
 
@@ -62,7 +65,7 @@ class Enemy extends Character {
     update(dt) {
 
         // Increase speed of Enemy if x is less than all 5 blocks. (101w /per block)
-        if(this.x < this.horizontalMovement * 4 ) { this.x += 150 * dt };
+        this.x < this.borderX ? this.x += 150 * dt : this.x = 0;
     }
 }
 
@@ -73,7 +76,7 @@ const vehicle = new Enemy();
 const allEnemies = [];
 allEnemies.push(vehicle);
 
-// Temporary Hero class structure in progress.
+// Hero class representing player and collisions.
 
 class Hero extends Character {
     constructor() {
