@@ -28,9 +28,20 @@ const randomTile = function(num1 = 0, num2 = 4) {
     return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
 }
 
+// Base character for Enemy and Hero to derive characteristics from.
+class Character {
+    constructor() {
+
+        // Character movement properties.
+        this.horizontalMovement = 101;
+        this.verticalMovement = 83;
+    }
+}
+
 // Enemy class representing vehicles and vehicle collisions.
-class Enemy {
+class Enemy extends Character {
     constructor(){
+        super()
 
         // Properties for Enemy class.
 
@@ -48,8 +59,10 @@ class Enemy {
     }
 
     // Update enemy entity across the x,y axis.
-    update() {
+    update(dt) {
 
+        // Increase speed of Enemy if x is less than all 5 blocks. (101w /per block)
+        if(this.x < this.horizontalMovement * 4 ) { this.x += 150 * dt };
     }
 }
 
@@ -62,14 +75,10 @@ allEnemies.push(vehicle);
 
 // Temporary Hero class structure in progress.
 
-class Hero {
+class Hero extends Character {
     constructor() {
-
+        super()
         // Properties for Hero class
-
-        // Hero movement properties.
-        this.horizontalMovement = 101;
-        this.verticalMovement = 83;
 
         // Initial spawn position.
         this.spawnX = this.horizontalMovement * randomTile();
