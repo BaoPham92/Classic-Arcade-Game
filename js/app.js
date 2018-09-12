@@ -65,7 +65,7 @@ class Enemy extends Character {
     update(dt) {
 
         // Increase speed of Enemy if x is less than all 5 blocks. (101w /per block)
-        this.x < this.borderX ? this.x += 150 * dt : this.x = 0;
+        this.x < this.borderX ? this.x += 150 * dt : this.x = -101;
     }
 }
 
