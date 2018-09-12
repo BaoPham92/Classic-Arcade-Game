@@ -24,7 +24,7 @@ Enemy.prototype.render = function() {
 };
 
 // Created a randomize function for tile changing. Adds a little bit of dynamic play for later.
-function randomTile(num1 = 0, num2 = 4) {
+const randomTile = function(num1 = 0, num2 = 4) {
     return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
 }
 
