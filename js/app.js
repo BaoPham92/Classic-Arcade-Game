@@ -58,7 +58,7 @@ class Hero extends Character {
 
         // Initial spawn position.
         this.spawnX = this.horizontalMovement * super.randomTile();
-        this.spawnY = (this.verticalMovement * 4) + 48;
+        this.spawnY = (this.verticalMovement * 4) + 48; 
         
         // Character position along the x and y axis grid of canvas.
         this.x = this.spawnX;
@@ -74,6 +74,9 @@ class Hero extends Character {
     }
 
     handleInput(input) {
+
+        // Helper for calculating movements on Y axis.
+        if(input == 'up') {console.log(this.y, 'logged!')};
 
         // Temporary switch statements to help with mapping the rendered character amongst the x and y axis of canvas.
         switch (input) {
@@ -95,10 +98,16 @@ class Hero extends Character {
     // Update method that checks for character collisions and win conditions.
     update() {
 
+        // Condition for when this.y reaches 48. (Top block nearing 0 to Y axis.)
+        this.y === 48 ? this.restartPosition() : 'Error';
+
+        // Looping through the allEnemies for player and enemey collisions.
         for(let enemy of allEnemies) {
 
+            // Conditional for collisions.
             enemy.y === this.y && (enemy.x + enemy.horizontalMovement / 1.8 > this.x && enemy.x < this.x + this.horizontalMovement / 1.8) ? this.restartPosition() : 'error';
-            console.log(enemy.y, this.y); // Message to the console for confirmination.
+
+            // console.log(enemy.y, 'Enemy logged.'); // Message to the console for confirmination.
         }
     }
 }
