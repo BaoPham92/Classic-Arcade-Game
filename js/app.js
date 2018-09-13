@@ -115,12 +115,6 @@ const vehicle = new Enemy(83, 150), vehicle2 = new Enemy(166, 110), vehicle3 = n
 const allEnemies = [];
 allEnemies.push(vehicle, vehicle2, vehicle3);
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-
-
-
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
