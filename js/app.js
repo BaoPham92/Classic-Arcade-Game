@@ -58,7 +58,7 @@ class Hero extends Character {
 
         // Initial spawn position.
         this.spawnX = this.horizontalMovement * super.randomTile();
-        this.spawnY = (this.verticalMovement * 5) - 40;
+        this.spawnY = (this.verticalMovement * 4) + 48;
         
         // Character position along the x and y axis grid of canvas.
         this.x = this.spawnX;
@@ -81,6 +81,24 @@ class Hero extends Character {
             case 'up': if (this.y > 83) {this.y -= this.verticalMovement; break;} else if (this.y <= 83) {break;}
             case 'right': if (this.x < 101 * 4) this.x += this.horizontalMovement; break;
             case 'down': if (this.y < 83 * 4) this.y += this.verticalMovement; break;
+        }
+    }
+
+    // Restart player postion.
+    restartPosition() {
+
+        // Character position along the x and y axis grid of canvas.
+        this.x = this.spawnX;
+        this.y = this.spawnY;
+    }
+
+    // Update method that checks for character collisions and win conditions.
+    update() {
+
+        for(let enemy of allEnemies) {
+
+            enemy.y === this.y && (enemy.x + enemy.horizontalMovement / 1.8 > this.x && enemy.x < this.x + this.horizontalMovement / 1.8) ? this.restartPosition() : 'error';
+            console.log(enemy.y, this.y); // Message to the console for confirmination.
         }
     }
 }
