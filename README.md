@@ -20,3 +20,11 @@ This is a game with 'frogger' like functionality of getting the player acrosss t
 ## TODO's:
 - ~~Clean out the comments in JS files.~~ Inspection of comments on elements and outside resource engines for insight. (**)
 - ~~Add a win condition.~~ (**)
+
+## Credits | Sources
+
+I would like to give credit and thanks to the following resources.
+
+- [Udacity's](https://discussions.udacity.com/) active community and support.
+- [W3Schools](https://www.w3schools.com/default.asp) for providing explaination on frames.
+- [StackOverflow](https://stackoverflow.com/) and their community for the in depth library of answers and troubleshooting aid.
