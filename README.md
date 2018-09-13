@@ -19,4 +19,4 @@ This is a game with 'frogger' like functionality of getting the player acrosss t
 
 ## TODO's:
 - ~~Clean out the comments in JS files.~~ Inspection of comments on elements and outside resource engines for insight. (**)
-- Add a win condition.
+- ~~Add a win condition.~~ (**)
