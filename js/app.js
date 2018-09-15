@@ -112,12 +112,15 @@ class Hero extends Character {
 // Player
 const player = new Hero();
 
-// Enemies
-const vehicle = new Enemy(83, 150), vehicle2 = new Enemy(166, 110), vehicle3 = new Enemy(0, 225);
-
 // Declare and push Enemy.
 const allEnemies = [];
-allEnemies.push(vehicle, vehicle2, vehicle3);
+// allEnemies.push(vehicle, vehicle2, vehicle3);
+
+// Enemies
+for(let i = 1; i < 4; i++ ) {
+    const vehicle = new Enemy((i - 1) * 83, i * 135);
+    allEnemies.push(vehicle);
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
