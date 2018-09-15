@@ -15,6 +15,11 @@ class Character {
     randomTile(num1 = 0, num2 = 4) {
         return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
     }
+
+    // Draw method for the image to be displayed.
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
 }
 
 // Enemy class representing vehicles and vehicle collisions.
@@ -33,11 +38,6 @@ class Enemy extends Character {
 
         // Sprite img for Enemy to render on canvas element.
         this.sprite = 'images/enemy-bug.png';
-    }
-
-    // Draw method for the image to be displayed.
-    render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
     // Update enemy entity across the x,y axis.
@@ -66,11 +66,6 @@ class Hero extends Character {
 
         // Image of the character.
         this.sprite = 'images/char-boy.png';
-    }
-
-    // Draw method for the image to be displayed.
-    render(){
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
     handleInput(input) {
