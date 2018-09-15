@@ -71,12 +71,12 @@ class Hero extends Character {
     handleInput(input) {
 
         // Helper for calculating movements on Y axis.
-        if(input == 'up') {console.log(this.y, 'logged!')};
+        if(input == 'up' || 'left' || 'right') {console.log(this.y, 'logged!')};
 
         // Temporary switch statements to help with mapping the rendered character amongst the x and y axis of canvas.
         switch (input) {
             case 'left': if (this.x > 0) { this.x -= this.horizontalMovement; break; } else if (this.x <= 0) {break;}
-            case 'up': if (this.y > 83) {this.y -= this.verticalMovement; break;} else if (this.y <= 83) {break;}
+            case 'up': if (this.y > 0) {this.y -= this.verticalMovement; break;}
             case 'right': if (this.x < 101 * 4) this.x += this.horizontalMovement; break;
             case 'down': if (this.y < 83 * 4) this.y += this.verticalMovement; break;
         }
@@ -93,8 +93,8 @@ class Hero extends Character {
     // Update method that checks for character collisions and win conditions.
     update() {
 
-        // Condition for when this.y reaches 48. (Top block nearing 0 to Y axis.)
-        this.y === 48 ? this.restartPosition() : 'Error';
+        // Condition for when this.y reaches -35. (Top block nearing 0 to Y axis.)
+        this.y === -35 ? setTimeout(() => { this.restartPosition() }, 175) : 'Error';
 
         // Looping through the allEnemies for player and enemey collisions.
         for(let enemy of allEnemies) {
