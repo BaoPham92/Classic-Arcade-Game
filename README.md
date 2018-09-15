@@ -11,6 +11,15 @@ Updated objective progress.
 
 This is a game with 'frogger' like functionality of getting the player acrosss the a set amount of cordinates to the win condition avoiding posssible entities that would cause you to lose.
 
+## Instructions:
+- Download files.
+- open index.html in browser.
+- Ready to demo.
+
+#### Game instructions:
+- Arrow keys: **'left', 'up', 'down' and 'right'** will control player movement.
+- Goals: Reach to the water block avoiding collisions.
+
 ## Objective:
 - Create a Hero (**)
 - Containment perimeter (Player can not move off screen). (**)
